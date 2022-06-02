@@ -1,9 +1,11 @@
 const fs = require('fs');
 const { Client, Intents, Discord } = require('discord.js');
+const announce = require('./tasks/results');
+const schedule = require('node-schedule');
 const { Mongo } = require('./mongoClient');
 require('dotenv').config();
 
-// init b=bot client and load commands & events
+// init bot client and load commands & events
 const bot = new Client(
     {
         intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS]
@@ -34,3 +36,8 @@ bot.once('ready', () => {
 bot.login(process.env.TOKEN)
 // init connection to Mongo
 Mongo();
+
+// schedule winner annoucement
+schedule.scheduleJob({year: 2022, month: 5, date: 3, hour: 0, tz: 'Asia/Kolkata'}, async () => {
+    await announce(bot);
+});

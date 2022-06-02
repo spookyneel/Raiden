@@ -15,6 +15,7 @@
     "discord.js": "^13.7.0",
     "dotenv": "^16.0.1",
     "edit-json-file": "^1.7.0",
-    "mongoose": "^6.3.4"
+    "mongoose": "^6.3.4",
+    "node-schedule": "^2.1.0"
   }
 }
