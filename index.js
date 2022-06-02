@@ -38,6 +38,6 @@ bot.login(process.env.TOKEN)
 Mongo();
 
 // schedule winner annoucement
-schedule.scheduleJob({year: 2022, month: 5, date: 3, hour: 0, tz: 'Asia/Kolkata'}, async () => {
-    await announce(bot);
-});
+//schedule.scheduleJob({year: 2022, month: 5, date: 3, hour: 0, tz: 'Asia/Kolkata'}, async () => {
+    //await announce(bot);
+//});
